@@ -1,0 +1,7 @@
+C:\Workspace\Personal\CRT\ContentRequestTool_v2\CRT\CRT\bin\CRT.dll
+C:\Workspace\Personal\CRT\ContentRequestTool_v2\CRT\CRT\bin\CRT.pdb
+C:\Workspace\Personal\CRT\ContentRequestTool_v2\CRT\CRT\obj\Debug\CRT.csprojResolveAssemblyReference.cache
+C:\Workspace\Personal\CRT\ContentRequestTool_v2\CRT\CRT\obj\Debug\CRT.dll
+C:\Workspace\Personal\CRT\ContentRequestTool_v2\CRT\CRT\obj\Debug\CRT.pdb
+C:\Workspace\Personal\CRT\ContentRequestTool_v2\CRT\CRT\bin\CsQuery.dll
+C:\Workspace\Personal\CRT\ContentRequestTool_v2\CRT\CRT\bin\CsQuery.xml
