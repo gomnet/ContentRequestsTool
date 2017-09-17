@@ -40,10 +40,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CsQuery">
-      <HintPath>..\packages\CsQuery.1.3.4\lib\net40\CsQuery.dll</HintPath>
+    <Reference Include="FSharp.Core, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FSharp.Core.4.0.0.1\lib\net40\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.4, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.4\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ScrapySharp.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ScrapySharp.2.6.2\lib\net45\ScrapySharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ScrapySharpAsync, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ScrapySharp.2.6.2\lib\net45\ScrapySharpAsync.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -62,19 +72,62 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
+    <Content Include="AliasProcessor.aspx" />
+    <Content Include="BrandProcessor.aspx" />
+    <Content Include="ContentRequestTool.asmx" />
+    <Content Include="GroupProcessor.aspx" />
+    <Content Include="images\alias.png" />
+    <Content Include="images\brands.png" />
+    <Content Include="images\csv.gif" />
+    <Content Include="images\download.png" />
+    <Content Include="images\DownloadIcon.png" />
+    <Content Include="images\grupos.png" />
+    <Content Include="images\home-background.png" />
+    <Content Include="images\icon_sharepoint.jpg" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\Main.PNG" />
+    <Content Include="images\personaje.PNG" />
+    <Content Include="images\products.png" />
+    <Content Include="images\sql.png" />
+    <Content Include="ProductProcessor.aspx" />
+    <Content Include="scripts\CRT.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="AliasProcessor.aspx.cs">
+      <DependentUpon>AliasProcessor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="AliasProcessor.aspx.designer.cs">
+      <DependentUpon>AliasProcessor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContentRequestTool.asmx.cs">
+      <DependentUpon>ContentRequestTool.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="BrandProcessor.aspx.cs">
+      <DependentUpon>BrandProcessor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BrandProcessor.aspx.designer.cs">
+      <DependentUpon>BrandProcessor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GroupProcessor.aspx.cs">
+      <DependentUpon>GroupProcessor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GroupProcessor.aspx.designer.cs">
+      <DependentUpon>GroupProcessor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductProcessor.aspx.cs">
+      <DependentUpon>ProductProcessor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductProcessor.aspx.designer.cs">
+      <DependentUpon>ProductProcessor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AliasVM.cs" />
@@ -86,7 +139,8 @@
     <Compile Include="ViewModels\BrandVM.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="images\home-background.psd" />
+    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -94,9 +148,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

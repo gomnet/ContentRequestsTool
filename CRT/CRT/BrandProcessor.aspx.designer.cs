@@ -10,7 +10,7 @@
 namespace CRT {
     
     
-    public partial class Default {
+    public partial class BrandProcessor {
         
         /// <summary>
         /// Head1 control.
@@ -47,33 +47,6 @@ namespace CRT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdnLanguageSelected;
-        
-        /// <summary>
-        /// btnInsertCSV control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnInsertCSV;
-        
-        /// <summary>
-        /// btnInsertSQL control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnInsertSQL;
-        
-        /// <summary>
-        /// btnInsertSP control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnInsertSP;
         
         /// <summary>
         /// lupa control.

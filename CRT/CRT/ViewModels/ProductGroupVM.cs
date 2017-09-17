@@ -9,5 +9,7 @@ namespace CRT.ViewModels
     {
         public string GroupId { get; set; }
         public string ProductId { get; set; }
+        public DateTime Modified { get; set; }
+        public string LanguageId { get; set; }
     }
 }
