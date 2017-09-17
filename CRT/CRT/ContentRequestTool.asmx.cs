@@ -148,10 +148,41 @@ namespace CRT
                     CultureInfo providerES = CultureInfo.CreateSpecificCulture("es-ES");
 
                     var modifiedDate = DateTime.Now;
+                    var date = dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim();
                     if (language != WebConfigurationManager.AppSettings.Get("SpanishId"))
-                        modifiedDate = DateTime.ParseExact(dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim(), "MMMM d, yyyy", providerEN);
+                    {
+                        if (date.Contains("."))
+                        {
+                            try
+                            {
+                                modifiedDate = DateTime.ParseExact(date.Replace("Sept.", "Sep."), "MMM. dd, yyyy", providerEN);
+                            }
+                            catch (Exception)
+                            {
+                                try
+                                {
+                                    modifiedDate = DateTime.ParseExact(date, "MMM. d, yyyy", providerEN);
+                                }
+                                catch (Exception)
+                                {
+                                    modifiedDate = DateTime.ParseExact(date.Replace("Sept.", "Sep."), "MMM. d, yyyy", providerEN);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            try
+                            {
+                                modifiedDate = DateTime.ParseExact(date, "MMMM dd, yyyy", providerEN);
+                            }
+                            catch (Exception)
+                            {
+                                modifiedDate = DateTime.ParseExact(date, "MMMM d, yyyy", providerEN);
+                            }
+                        }
+                    }
                     else
-                        modifiedDate = DateTime.ParseExact(dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim(), "d 'de' MMMM 'de' yyyy", providerES);
+                        modifiedDate = DateTime.ParseExact(date, "d 'de' MMMM 'de' yyyy", providerES);
 
                     var alias = new AliasVM
                     {
@@ -258,10 +289,41 @@ namespace CRT
                     CultureInfo providerES = CultureInfo.CreateSpecificCulture("es-ES");
 
                     var modifiedDate = DateTime.Now;
+                    var date = dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim();
                     if (language != WebConfigurationManager.AppSettings.Get("SpanishId"))
-                        modifiedDate = DateTime.ParseExact(dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim(), "MMMM d, yyyy", providerEN);
+                    {
+                        if (date.Contains("."))
+                        {
+                            try
+                            {
+                                modifiedDate = DateTime.ParseExact(date.Replace("Sept.", "Sep."), "MMM. dd, yyyy", providerEN);
+                            }
+                            catch (Exception)
+                            {
+                                try
+                                {
+                                    modifiedDate = DateTime.ParseExact(date, "MMM. d, yyyy", providerEN);
+                                }
+                                catch (Exception)
+                                {
+                                    modifiedDate = DateTime.ParseExact(date.Replace("Sept.", "Sep."), "MMM. d, yyyy", providerEN);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            try
+                            {
+                                modifiedDate = DateTime.ParseExact(date, "MMMM dd, yyyy", providerEN);
+                            }
+                            catch (Exception)
+                            {
+                                modifiedDate = DateTime.ParseExact(date, "MMMM d, yyyy", providerEN);
+                            }
+                        }
+                    }
                     else
-                        modifiedDate = DateTime.ParseExact(dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim(), "d 'de' MMMM 'de' yyyy", providerES);
+                        modifiedDate = DateTime.ParseExact(date, "d 'de' MMMM 'de' yyyy", providerES);
 
                     var brand = new BrandVM
                     {
@@ -354,10 +416,41 @@ namespace CRT
                         CultureInfo providerES = CultureInfo.CreateSpecificCulture("es-ES");
 
                         var modifiedDate = DateTime.Now;
+                        var date = dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim();
                         if (language != WebConfigurationManager.AppSettings.Get("SpanishId"))
-                            modifiedDate = DateTime.ParseExact(dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim(), "MMMM d, yyyy", providerEN);
+                        {
+                            if (date.Contains("."))
+                            {
+                                try
+                                {
+                                    modifiedDate = DateTime.ParseExact(date.Replace("Sept.", "Sep."), "MMM. dd, yyyy", providerEN);
+                                }
+                                catch (Exception)
+                                {
+                                    try
+                                    {
+                                        modifiedDate = DateTime.ParseExact(date, "MMM. d, yyyy", providerEN);
+                                    }
+                                    catch (Exception)
+                                    {
+                                        modifiedDate = DateTime.ParseExact(date.Replace("Sept.", "Sep."), "MMM. d, yyyy", providerEN);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    modifiedDate = DateTime.ParseExact(date, "MMMM dd, yyyy", providerEN);
+                                }
+                                catch (Exception)
+                                {
+                                    modifiedDate = DateTime.ParseExact(date, "MMMM d, yyyy", providerEN);
+                                }
+                            }
+                        }
                         else
-                            modifiedDate = DateTime.ParseExact(dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim(), "d 'de' MMMM 'de' yyyy", providerES);
+                            modifiedDate = DateTime.ParseExact(date, "d 'de' MMMM 'de' yyyy", providerES);
 
                         var group = new GroupVM
                         {
@@ -407,7 +500,7 @@ namespace CRT
             }
             catch (Exception ex)
             {
-
+                throw new Exception(ex.Message);
             }
         }
 
@@ -452,10 +545,41 @@ namespace CRT
                     CultureInfo providerES = CultureInfo.CreateSpecificCulture("es-ES");
 
                     var modifiedDate = DateTime.Now;
+                    var date = dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim();
                     if (language != WebConfigurationManager.AppSettings.Get("SpanishId"))
-                        modifiedDate = DateTime.ParseExact(dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim(), "MMMM d, yyyy", providerEN);
+                    {
+                        if (date.Contains("."))
+                        {
+                            try
+                            {
+                                modifiedDate = DateTime.ParseExact(date.Replace("Sept.", "Sep."), "MMM. dd, yyyy", providerEN);
+                            }
+                            catch (Exception)
+                            {
+                                try
+                                {
+                                    modifiedDate = DateTime.ParseExact(date, "MMM. d, yyyy", providerEN);
+                                }
+                                catch (Exception)
+                                {
+                                    modifiedDate = DateTime.ParseExact(date.Replace("Sept.", "Sep."), "MMM. d, yyyy", providerEN);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            try
+                            {
+                                modifiedDate = DateTime.ParseExact(date, "MMMM dd, yyyy", providerEN);
+                            }
+                            catch (Exception)
+                            {
+                                modifiedDate = DateTime.ParseExact(date, "MMMM d, yyyy", providerEN);
+                            }
+                        }
+                    }
                     else
-                        modifiedDate = DateTime.ParseExact(dom.Html.CssSelect(".span6 p").First().InnerText.Split(':')[1].Trim(), "d 'de' MMMM 'de' yyyy", providerES);
+                        modifiedDate = DateTime.ParseExact(date, "d 'de' MMMM 'de' yyyy", providerES);
 
                     var product = new ProductVM
                     {
